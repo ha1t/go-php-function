@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestIncr(t *testing.T) {
+func TestBasename(t *testing.T) {
 	if i := php.Basename("/hoge/huga/base.php"); i != "base.php" {
 		t.Error("failed")
 	} else {
