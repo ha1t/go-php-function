@@ -7,6 +7,10 @@ import (
 	"strings"
 )
 
+func Basename(file_path string) string {
+	return filepath.Base(file_path)
+}
+
 func file_get_contents_url(url string) []byte {
 
 	response, err := http.Get(url)
