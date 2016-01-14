@@ -1,5 +1,5 @@
 
-```golang
+```go
 package main
 
 import (
@@ -21,7 +21,7 @@ after hogehoge.php
 
 ## glob
 
-```golang
+```go
 package main
 
 import (
@@ -47,7 +47,7 @@ func main() {
 echo explode("_", "hello_world")[0];
 ```
 
-```golang
+```go
 package main
 
 import "fmt"
