@@ -1,4 +1,4 @@
-package gotest
+package php_test
 
 import (
 	"github.com/ha1t/go-php-function"
