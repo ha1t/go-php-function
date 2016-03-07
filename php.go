@@ -67,3 +67,12 @@ func File_put_contents(fileName string, write_data string) int {
 
 	return wrote_byte
 }
+
+func InArray(str string, list []string) bool {
+	for _, v := range list {
+		if v == str {
+			return true
+		}
+	}
+	return false
+}
