@@ -12,6 +12,20 @@ func Basename(file_path string) string {
 	return filepath.Base(file_path)
 }
 
+func File_get_contents(url string) string {
+
+	if strings.Index(url, "http") == 0 {
+		return string(file_get_contents_url(url))
+	}
+
+	if strings.Index(url, "https") == 0 {
+		return string(file_get_contents_url(url))
+	}
+
+	return string(file_get_contents_file(url))
+	// (strings.Split("a,b,c,d,e,f,g", ",")) // [a b c d e f g]
+}
+
 func file_get_contents_url(url string) []byte {
 
 	response, err := http.Get(url)
@@ -44,20 +58,6 @@ func file_get_contents_file(url string) []byte {
 	return body
 }
 
-func File_get_contents(url string) string {
-
-	if strings.Index(url, "http") == 0 {
-		return string(file_get_contents_url(url))
-	}
-
-	if strings.Index(url, "https") == 0 {
-		return string(file_get_contents_url(url))
-	}
-
-	return string(file_get_contents_file(url))
-	// (strings.Split("a,b,c,d,e,f,g", ",")) // [a b c d e f g]
-}
-
 func File_put_contents(fileName string, write_data string) int {
 	file, _ := os.Create(fileName)
 	defer file.Close()
@@ -66,6 +66,11 @@ func File_put_contents(fileName string, write_data string) int {
 	file.Sync()
 
 	return wrote_byte
+}
+
+func FileExists(filename string) bool {
+	_, err := os.Stat(filename)
+	return err == nil
 }
 
 func InArray(str string, list []string) bool {
