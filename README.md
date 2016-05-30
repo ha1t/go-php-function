@@ -1,6 +1,6 @@
 # go-php-function
 
-## basname
+## basename
 
 ```go
 package main
